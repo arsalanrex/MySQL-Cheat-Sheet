@@ -25,3 +25,33 @@ Database changed<br>
 MariaDB [student]> create table topperlist(sname varchar(10),sid int(5),avgmarks int(3));<br>
 Query OK, 0 rows affected (0.10 sec)<br>
 <hr>
+//Insert three distinct values in the table
+<br><br>
+MariaDB [student]> insert into topperlist values("abs",001,73);<br>
+Query OK, 1 row affected (0.01 sec)<br>
+MariaDB [student]> insert into topperlist values("bcd",002,73);<br>
+Query OK, 1 row affected (0.00 sec)<br>
+MariaDB [student]> insert into topperlist values("cde",003,82);<br>
+Query OK, 1 row affected (0.01 sec)<br>
+<hr>
+//To see the description of the table and its contents
+<br><br>
+MariaDB [student]> desc topperlist;<br>
++----------+-------------+------+-----+---------+-------+<br>
+| Field    | Type        | Null | Key | Default | Extra |<br>
++----------+-------------+------+-----+---------+-------+<br>
+| sname    | varchar(10) | YES  |     | NULL    |       |<br>
+| sid      | int(5)      | YES  |     | NULL    |       |<br>
+| avgmarks | int(3)      | YES  |     | NULL    |       |<br>
++----------+-------------+------+-----+---------+-------+<br>
+3 rows in set (0.10 sec)<br>
+MariaDB [student]> select * from topperlist;<br>
++-------+------+----------+<br>
+| sname | sid  | avgmarks |<br>
++-------+------+----------+<br>
+| abs   |    1 |       73 |<br>
+| bcd   |    2 |       73 |<br>
+| cde   |    3 |       82 |<br>
++-------+------+----------+<br>
+3 rows in set (0.00 sec)<br>
+<hr>
