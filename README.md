@@ -46,9 +46,25 @@ MariaDB [student]> desc topperlist;<br>
 &nbsp;Default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 &nbsp;Extra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
 +--------------------+--------------------------+------------+----------+------------------+--------------+<br>
-&nbsp;|&nbsp;sname    |&nbsp;varchar(10) |&nbsp;YES  |     |&nbsp;NULL    |       |<br>
-&nbsp;|&nbsp;sid      |&nbsp;int(5)      |&nbsp;YES  |     |&nbsp;NULL    |       |<br>
-&nbsp;|&nbsp;avgmarks |&nbsp;int(3)      |&nbsp;YES  |     |&nbsp;NULL    |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;sname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+&nbsp;varchar(10) |
+&nbsp;YES  |
+|
+&nbsp;NULL    |
+|<br>
+&nbsp;|
+&nbsp;sid      |
+&nbsp;int(5)      |
+&nbsp;YES  |
+|&nbsp;NULL    |
+|<br>
+&nbsp;|
+&nbsp;avgmarks |
+&nbsp;int(3)      |
+&nbsp;YES  |
+|
+&nbsp;NULL    |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
 +--------------------+--------------------------+------------+----------+------------------+--------------+<br>
 3 rows in set (0.10 sec)<br>
 MariaDB [student]> select * from topperlist;<br>
