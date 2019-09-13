@@ -3,7 +3,7 @@ A basic guide to the workings of MySQL
 <hr>
 We'll be seeing the working examples of several basic commands on MariaDB:
 <hr>
-##//Starting the mysql.exe
+## //Starting the mysql.exe
 <br><br>
 C:ARSALAN\xampp\mysql\bin>mysql.exe -u root <br>
 Welcome to the MariaDB monitor. Commands end with ; or \g.<br>
@@ -12,20 +12,20 @@ Server version: 10.1.31-MariaDB mariadb.org binary distribution<br>
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.<br>
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.<br>
 <hr>
-##//Create database
+## //Create database
 <br><br>
 MariaDB [(none)]> create database student;<br>
 Query OK, 1 row affected (0.02 sec)<br>
 <hr>
-##//Use the database<br>
-##//Create a table student with student_name(sname), student_id(sid) and average_marks(avgmarks)
+## //Use the database<br>
+## //Create a table student with student_name(sname), student_id(sid) and average_marks(avgmarks)
 <br><br>
 MariaDB [(none)]> use student;<br>
 Database changed<br>
 MariaDB [student]> create table topperlist(sname varchar(10),sid int(5),avgmarks int(3));<br>
 Query OK, 0 rows affected (0.10 sec)<br>
 <hr>
-//Insert three distinct values in the table
+## //Insert three distinct values in the table
 <br><br>
 MariaDB [student]> insert into topperlist values("abs",001,73);<br>
 Query OK, 1 row affected (0.01 sec)<br>
@@ -34,7 +34,7 @@ Query OK, 1 row affected (0.00 sec)<br>
 MariaDB [student]> insert into topperlist values("cde",003,82);<br>
 Query OK, 1 row affected (0.01 sec)<br>
 <hr>
-##//To see the description of the table and its contents
+## //To see the description of the table and its contents
 <br><br>
 MariaDB [student]> desc topperlist;<br>
 +--------------------+--------------------------+------------+----------+------------------+--------------+<br>
