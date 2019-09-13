@@ -3,7 +3,7 @@ A basic guide to the workings of MySQL
 <hr>
 We'll be seeing the working examples of several basic commands on MariaDB:
 <hr>
-## //Starting the mysql.exe
+## Starting the mysql.exe
 <br><br>
 C:ARSALAN\xampp\mysql\bin>mysql.exe -u root <br>
 Welcome to the MariaDB monitor. Commands end with ; or \g.<br>
