@@ -4,7 +4,7 @@ A basic guide to the workings of MySQL
 We'll be seeing the working examples of several basic commands on MariaDB:
 <hr>
 
-#### //Starting the mysql.exe
+#### //Starting mysql.exe
 
 ```
 C:ARSALAN\xampp\mysql\bin>mysql.exe -u root 
@@ -56,7 +56,6 @@ Query OK, 1 row affected (0.01 sec)
 
 ```
 MariaDB [student]> desc topperlist;
-
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
 +----------+-------------+------+-----+---------+-------+
@@ -72,7 +71,6 @@ MariaDB [student]> desc topperlist;
 
 ```
 MariaDB [student]> select * from topperlist;
-
 +-------+------+----------+
 | sname | sid  | avgmarks |
 +-------+------+----------+
@@ -80,6 +78,37 @@ MariaDB [student]> select * from topperlist;
 | bcd   |    2 |       73 |
 | cde   |    3 |       82 |
 +-------+------+----------+
+3 rows in set (0.00 sec)
+```
+<hr>
+
+#### //Adding a tuple in the table
+```
+MariaDB [student]> alter table topperlist ADD(rank int(2));
+Query OK, 0 rows affected (0.20 sec)
+Records: 0 Duplicates: 0 Warnings: 0
+```
+#### //Results
+```
+MariaDB [student]> desc topperlist;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| sname    | varchar(10) | YES  |     | NULL    |       |
+| sid      | int(5)      | YES  |     | NULL    |       |
+| avgmarks | int(3)      | YES  |     | NULL    |       |
+| rank     | int(2)      | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.05 sec)
+
+MariaDB [student]> select * from topperlist;
++-------+------+----------+------+
+| sname | sid  | avgmarks | rank |
++-------+------+----------+------+
+| abs   |    1 |       73 | NULL |
+| bcd   |    2 |       73 | NULL |
+| cde   |    3 |       82 | NULL |
++-------+------+----------+------+
 3 rows in set (0.00 sec)
 ```
 <hr>
