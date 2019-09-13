@@ -82,7 +82,7 @@ MariaDB [student]> select * from topperlist;
 ```
 <hr>
 
-#### //Adding a tuple in the table
+#### //Adding a tuple rank in the table
 ```
 MariaDB [student]> alter table topperlist ADD(rank int(2));
 Query OK, 0 rows affected (0.20 sec)
