@@ -38,7 +38,7 @@ Query OK, 1 row affected (0.01 sec)<br>
 <br><br>
 MariaDB [student]> desc topperlist;<br>
 +----------+-------------+------+-----+---------+-------+<br>
-|&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Type&nbsp;&nbsp;&nbsp;|&nbsp;Null&nbsp;|&nbsp;Key&nbsp;|&nbsp;Default&nbsp;|&nbsp;Extra&nbsp;|<br>
+|&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Null&nbsp;&nbsp;&nbsp;|&nbsp;Key&nbsp;&nbsp;&nbsp;|&nbsp;Default&nbsp;&nbsp;&nbsp;|&nbsp;Extra&nbsp;|<br>
 +----------+-------------+------+-----+---------+-------+<br>&nbsp;
 | sn&nbsp;me    | varchar(10) | YES  |     | NULL    |       |<br>
 | sid      | int(5)      | YES  |     | NULL    |       |<br>
