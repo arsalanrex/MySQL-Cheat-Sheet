@@ -37,13 +37,13 @@ Query OK, 1 row affected (0.01 sec)<br>
 //To see the description of the table and its contents
 <br><br>
 MariaDB [student]> desc topperlist;<br>
-+-----------------+------------------+-----------+----------+--------------+-----------+<br>
++--------------------+--------------------------+------------+----------+------------------+--------------+<br>
 &nbsp;|&nbsp;Field&nbsp;&nbsp;&nbsp;|&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Null&nbsp;|&nbsp;Key&nbsp;&nbsp;&nbsp;|&nbsp;Default&nbsp;&nbsp;&nbsp;|&nbsp;Extra&nbsp;|<br>
-+----------+-------------+------+-----+---------+-------+<br>
++--------------------+--------------------------+------------+----------+------------------+--------------+<br>
 &nbsp;| sname    | varchar(10) | YES  |     | NULL    |       |<br>
 &nbsp;| sid      | int(5)      | YES  |     | NULL    |       |<br>
 &nbsp;| avgmarks | int(3)      | YES  |     | NULL    |       |<br>
-+----------+-------------+------+-----+---------+-------+<br>
++--------------------+--------------------------+------------+----------+------------------+--------------+<br>
 3 rows in set (0.10 sec)<br>
 MariaDB [student]> select * from topperlist;<br>
 +-------+------+----------+<br>
