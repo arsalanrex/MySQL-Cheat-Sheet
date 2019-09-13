@@ -1,4 +1,4 @@
-# MySQL-Cheat-Sheat
+# MySQL-Cheat-Sheet
 A basic guide to the workings of MySQL
 <hr>
 We'll be seeing the working examples of several basic commands on MariaDB:
