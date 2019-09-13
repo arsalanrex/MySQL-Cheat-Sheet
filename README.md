@@ -4,7 +4,7 @@ A basic guide to the workings of MySQL
 We'll be seeing the working examples of several basic commands on MariaDB:
 <hr>
 
-### //Starting the mysql.exe
+#### //Starting the mysql.exe
 
 ```
 C:ARSALAN\xampp\mysql\bin>mysql.exe -u root 
@@ -17,7 +17,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 <hr>
 
-### //Create database
+#### //Create database
 
 ```
 MariaDB [(none)]> create database student;
@@ -25,18 +25,22 @@ Query OK, 1 row affected (0.02 sec)
 ```
 <hr>
 
-### //Use the database<br>
-### //Create a table student with student_name(sname), student_id(sid) and average_marks(avgmarks)
+#### //Use the database<br>
 
 ```
 MariaDB [(none)]> use student;
 Database changed
+```
+<hr>
+
+#### //Create a table student with student_name(sname), student_id(sid) and average_marks(avgmarks)
+```
 MariaDB [student]> create table topperlist(sname varchar(10),sid int(5),avgmarks int(3));
 Query OK, 0 rows affected (0.10 sec)
 ```
 <hr>
 
-### //Insert three distinct values in the table
+#### //Insert three distinct values in the table
 
 ```
 MariaDB [student]> insert into topperlist values("abs",001,73);
@@ -48,7 +52,7 @@ Query OK, 1 row affected (0.01 sec)
 ```
 <hr>
 
-### //To see the description of the table and its contents
+#### //To see the description of the table and its contents
 
 ```
 MariaDB [student]> desc topperlist;
@@ -61,7 +65,12 @@ MariaDB [student]> desc topperlist;
 | avgmarks | int(3)      | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
 3 rows in set (0.10 sec)
+```
+<hr>
 
+#### //To see the contents of the table
+
+```
 MariaDB [student]> select * from topperlist;
 
 +-------+------+----------+
