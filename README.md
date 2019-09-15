@@ -140,6 +140,7 @@ MariaDB [student]> desc topperlist;
 ## DML (Data Manipulation Language)
 <hr>
 
+#### //Updating the value with a constraint
 ```
 MariaDB [student]> update topperlist set sname="abc" where sid=1;
 Query OK, 1 row affected (0.02 sec)
