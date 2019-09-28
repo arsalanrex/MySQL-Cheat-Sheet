@@ -140,7 +140,7 @@ MariaDB [student]> desc topperlist;
 ## DML (Data Manipulation Language)
 <hr>
 
-#### //Updating the value with a constraint
+#### //Use update
 ```
 MariaDB [student]> update topperlist set sname="abc" where sid=1;
 Query OK, 1 row affected (0.02 sec)
@@ -155,7 +155,11 @@ MariaDB [student]> select * from topperlist;
 | cde   |    3 |       82 | NULL |
 +-------+------+----------+------+
 3 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Apply conditional delete
+```
 MariaDB [student]> delete from topperlist where sid=3;
 Query OK, 1 row affected (0.01 sec)
 
@@ -167,7 +171,11 @@ MariaDB [student]> select * from topperlist;
 | bcd   |    2 |       73 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Insert into the table
+```
 MariaDB [student]> insert into topperlist(sname,sid,avgmarks)
 values("cde",003,82);
 Query OK, 1 row affected (0.01 sec)
@@ -202,6 +210,8 @@ MariaDB [student]> select * from topperlist;
 ## DQL (Data Query Language)
 <hr>
 
+#### //Select distinct elements
+
 ```
 MariaDB [student]> select distinct sname from topperlist;
 +-------+
@@ -212,7 +222,11 @@ MariaDB [student]> select distinct sname from topperlist;
 | cde   |
 +-------+
 3 rows in set (0.01 sec)
+```
+<hr>
 
+#### //Select particular column
+```
 MariaDB [student]> select sname from topperlist;
 +-------+
 | sname |
@@ -223,7 +237,11 @@ MariaDB [student]> select sname from topperlist;
 | cde   |
 +-------+
 4 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints
+```
 MariaDB [student]> select * from topperlist where avgmarks=73;
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -232,7 +250,11 @@ MariaDB [student]> select * from topperlist where avgmarks=73;
 | bcd   |    2 |       73 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.01 sec)
+```
+<hr>
 
+#### //Select using Order By
+```
 MariaDB [student]> select * from topperlist order by sid;
 +-------+------+----------+------+
 | sname | sid | avgmarks | rank |
@@ -243,7 +265,11 @@ MariaDB [student]> select * from topperlist order by sid;
 | cde   |   4 |       86 | NULL |
 +-------+------+----------+------+
 4 rows in set (0.01 sec)
+```
+<hr>
 
+#### //Select with multiple constraints using AND
+```
 MariaDB [student]> select * from topperlist where sname="cde" AND sid=3;
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -251,7 +277,11 @@ MariaDB [student]> select * from topperlist where sname="cde" AND sid=3;
 | cde   |    3 |       82 | NULL |
 +-------+------+----------+------+
 1 row in set (0.01 sec)
+```
+<hr>
 
+#### //Select with multiple constraints using OR
+```
 MariaDB [student]> select * from topperlist where sname="cde" OR sid=3;
 +-------+------+----------+------+
 | sname | sid | avgmarks | rank |
@@ -260,7 +290,11 @@ MariaDB [student]> select * from topperlist where sname="cde" OR sid=3;
 | cde   |   4 |       86 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using NOT
+```
 MariaDB [student]> select * from topperlist where NOT sname="cde";
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -269,7 +303,11 @@ MariaDB [student]> select * from topperlist where NOT sname="cde";
 | bcd   |    2 |       73 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using BETWEEN
+```
 MariaDB [student]> select * from topperlist where sid BETWEEN 2 AND 4;
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -279,7 +317,11 @@ MariaDB [student]> select * from topperlist where sid BETWEEN 2 AND 4;
 | cde   |    4 |       86 | NULL |
 +-------+------+----------+------+
 3 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using NOT BETWEEN
+```
 MariaDB [student]> select * from topperlist where sid NOT BETWEEN 2 AND 4;
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -287,7 +329,11 @@ MariaDB [student]> select * from topperlist where sid NOT BETWEEN 2 AND 4;
 | abc   |    1 |       73 | NULL |
 +-------+------+----------+------+
 1 row in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using LIKE
+```
 MariaDB [student]> select * from topperlist where sname LIKE 'a%';
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -295,7 +341,11 @@ MariaDB [student]> select * from topperlist where sname LIKE 'a%';
 | abc   |    1 |       73 | NULL |
 +-------+------+----------+------+
 1 row in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using IN
+```
 MariaDB [student]> select * from topperlist where sid IN (2,4);
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -304,7 +354,11 @@ MariaDB [student]> select * from topperlist where sid IN (2,4);
 | cde   |    4 |       86 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with constraints using NOT IN
+```
 MariaDB [student]> select * from topperlist where sid NOT IN (2,4);
 +-------+------+----------+------+
 | sname | sid  | avgmarks | rank |
@@ -313,7 +367,11 @@ MariaDB [student]> select * from topperlist where sid NOT IN (2,4);
 | cde   |    3 |       82 | NULL |
 +-------+------+----------+------+
 2 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Results
+```
 MariaDB [student]> desc topperlist;
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
@@ -487,7 +545,9 @@ MariaDB [student]> desc teacher;
 <hr>
 
 ## TCL (Transactional Control Language)
+<hr>
 
+#### //Current table state
 ```
 MariaDB [student]> select * from topperlist;
 +-------+-----+----------+------+
@@ -500,7 +560,11 @@ MariaDB [student]> select * from topperlist;
 | efg   |   5 |       87 | 1st  |
 +-------+-----+----------+------+
 5 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Start transaction and create a Savepoint
+```
 MariaDB [student]> start transaction;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -518,7 +582,11 @@ MariaDB [student]> select * from topperlist;
 | efg   |   5 |       87 | 1st  |
 +-------+-----+----------+------+
 5 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Work on the table
+```
 MariaDB [student]> delete from topperlist where sid=5;
 Query OK, 1 row affected (0.00 sec)
 
@@ -532,7 +600,11 @@ MariaDB [student]> select * from topperlist;
 | def   |   4 |       86 | NULL |
 +-------+-----+----------+------+
 4 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Rollback to Savepoint and view table
+```
 MariaDB [student]> rollback to s1;
 Query OK, 0 rows affected (0.01 sec)
 
@@ -554,7 +626,9 @@ MariaDB [student]> select * from topperlist;
 <hr>
 
 ### //Group Functions
+<hr>
 
+#### //Display the table
 ```
 MariaDB [student]> select * from topperlist;
 +-------+-----+----------+------+
@@ -567,7 +641,11 @@ MariaDB [student]> select * from topperlist;
 | efg   |   5 |       87 | 1st  |
 +-------+-----+----------+------+
 5 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with AVG 
+```
 MariaDB [student]> select AVG(avgmarks) from topperlist;
 +---------------+
 | AVG(avgmarks) |
@@ -575,7 +653,11 @@ MariaDB [student]> select AVG(avgmarks) from topperlist;
 |       80.2000 |
 +---------------+
 1 row in set (0.01 sec)
+```
+<hr>
 
+#### //Select with MAX
+```
 MariaDB [student]> select MAX(avgmarks) from topperlist;
 +---------------+
 | MAX(avgmarks) |
@@ -583,7 +665,11 @@ MariaDB [student]> select MAX(avgmarks) from topperlist;
 |            87 |
 +---------------+
 1 row in set (0.00 sec)
+```
+<hr>
 
+#### //Select with SUM
+```
 MariaDB [student]> select SUM(avgmarks) from topperlist;
 +---------------+
 | SUM(avgmarks) |
@@ -591,7 +677,11 @@ MariaDB [student]> select SUM(avgmarks) from topperlist;
 |           401 |
 +---------------+
 1 row in set (0.00 sec)
+```
+<hr>
 
+#### //Select with MIN
+```
 MariaDB [student]> select MIN(avgmarks) from topperlist;
 +---------------+
 | MIN(avgmarks) |
@@ -599,7 +689,11 @@ MariaDB [student]> select MIN(avgmarks) from topperlist;
 |            73 |
 +---------------+
 1 row in set (0.01 sec)
+```
+<hr>
 
+#### //Select with COUNT
+```
 MariaDB [student]> select COUNT(avgmarks) from topperlist;
 +-----------------+
 | COUNT(avgmarks) |
@@ -612,7 +706,9 @@ MariaDB [student]> select COUNT(avgmarks) from topperlist;
 <hr>
 
 ### //Character Functions
+<hr>
 
+#### //Display the table
 ```
 MariaDB [student]> select * from topperlist;
 +-------+-----+----------+------+
@@ -625,7 +721,11 @@ MariaDB [student]> select * from topperlist;
 | efg   |   5 |       87 | 1st  |
 +-------+-----+----------+------+
 5 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with LOWER
+```
 MariaDB [student]> select LOWER('Example') from topperlist;
 +------------------+
 | LOWER('Example') |
@@ -637,7 +737,11 @@ MariaDB [student]> select LOWER('Example') from topperlist;
 | example          |
 +------------------+
 5 rows in set (0.00 sec)
+```
+<hr>
 
+#### //Select with UPPER
+```
 MariaDB [student]> select UPPER('Example') from topperlist;
 +------------------+
 | UPPER('Example') |
